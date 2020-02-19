@@ -14,7 +14,6 @@ namespace MyTestDateTime.Test
             var Seconds = controller.days(DateTimeOffset.Parse("2020-02-01"), DateTimeOffset.Parse("2020-02-03"), TimeFrame.Second);
 
             Assert.Equal(172800, Seconds);
-
         }
 
         [Fact]
@@ -24,7 +23,6 @@ namespace MyTestDateTime.Test
             var Minutes = controller.days(DateTimeOffset.Parse("2020-02-01"), DateTimeOffset.Parse("2020-02-03"), TimeFrame.Minute);
 
             Assert.Equal(2880, Minutes);
-
         }
 
         [Fact]
@@ -34,7 +32,6 @@ namespace MyTestDateTime.Test
             var hours = controller.days(DateTimeOffset.Parse("2020-02-01"), DateTimeOffset.Parse("2020-02-03"), TimeFrame.Hour);
 
             Assert.Equal(48, hours);
-
         }
 
         [Fact]
@@ -44,7 +41,6 @@ namespace MyTestDateTime.Test
             var years = controller.days(DateTimeOffset.Parse("2019-02-01"), DateTimeOffset.Parse("2020-02-10"), TimeFrame.Year);
 
             Assert.Equal(1, years);
-
         }
 
         [Fact]
@@ -54,7 +50,6 @@ namespace MyTestDateTime.Test
             var days = controller.days(DateTimeOffset.Parse("2020-02-01"), DateTimeOffset.Parse("2020-02-03"));
 
             Assert.Equal(2, days);
-
         }
 
         [Fact]
@@ -63,16 +58,16 @@ namespace MyTestDateTime.Test
             DateTimeController controller = new DateTimeController();
             var weekdays = controller.WeekDays(DateTimeOffset.Parse("2020-02-12"), DateTimeOffset.Parse("2020-02-19"));
 
-            Assert.Equal(weekdays, 5);
+            Assert.Equal(5, weekdays);
         }
 
         [Fact]
-        public void Should_Be_3_Complete_Week()
+        public void Week_Should_Be_3_Complete_Week()
         {
             DateTimeController controller = new DateTimeController();
             var CompleteWeeks = controller.Weeks(DateTimeOffset.Parse("2020-01-29"), DateTimeOffset.Parse("2020-02-26"));
 
-            Assert.Equal(CompleteWeeks, 3);
+            Assert.Equal(3, CompleteWeeks);
         }
     }
 }
