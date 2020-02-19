@@ -32,5 +32,20 @@ namespace MyTestDateTime.Controllers
             }
             return (int)days;
         }
+
+        [HttpGet("weekdays/{start}/{end}")]
+        public int WeekDays(DateTimeOffset start, DateTimeOffset end)
+        {
+            int days = 0;
+            do
+            {
+                if (start.DayOfWeek != DayOfWeek.Saturday && start.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    ++days;
+                }
+                start = start.AddDays(1);
+            } while (start < end);
+            return days;
+        }
     }
 }
