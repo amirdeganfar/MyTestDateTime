@@ -47,5 +47,27 @@ namespace MyTestDateTime.Controllers
             } while (start < end);
             return days;
         }
+
+        [HttpGet("weeks/{start}/{end}")]
+        public int Weeks(DateTimeOffset start, DateTimeOffset end)
+        {
+            int completeWeek = 0;
+            bool IsMondayMeeted = false;
+
+            while (start < end)
+            {
+                if ((start.DayOfWeek == DayOfWeek.Monday) || IsMondayMeeted)
+                {
+                    IsMondayMeeted = true;
+                    if (start.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        ++completeWeek;
+                        IsMondayMeeted = false;
+                    }
+                }
+                start = start.AddDays(1);
+            }
+            return completeWeek;
+        }
     }
 }
