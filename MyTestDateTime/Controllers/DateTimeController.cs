@@ -15,59 +15,19 @@ namespace MyTestDateTime.Controllers
         [HttpGet("day/{start}/{end}/{timeFrame?}")]
         public int days(DateTimeOffset start, DateTimeOffset end, TimeFrame? timeFrame = null)
         {
-            int days = (int)(end - start).TotalDays;
-
-            switch (timeFrame)
-            {
-                case TimeFrame.Second:
-                    return (days * 24 * 60 * 60);
-                case TimeFrame.Minute:
-                    return (days * 24 * 60);
-                case TimeFrame.Hour:
-                    return (days * 24);
-                case TimeFrame.Year:
-                    return (days / 365);
-                default:
-                    break;
-            }
-            return (int)days;
+            return DateTimeUtility.days(start, end, timeFrame);
         }
 
         [HttpGet("weekdays/{start}/{end}")]
         public int WeekDays(DateTimeOffset start, DateTimeOffset end)
         {
-            int days = 0;
-            do
-            {
-                if (start.DayOfWeek != DayOfWeek.Saturday && start.DayOfWeek != DayOfWeek.Sunday)
-                {
-                    ++days;
-                }
-                start = start.AddDays(1);
-            } while (start < end);
-            return days;
+            return DateTimeUtility.WeekDays(start, end);
         }
 
         [HttpGet("weeks/{start}/{end}")]
         public int Weeks(DateTimeOffset start, DateTimeOffset end)
         {
-            int completeWeek = 0;
-            bool IsMondayMeeted = false;
-
-            while (start < end)
-            {
-                if ((start.DayOfWeek == DayOfWeek.Monday) || IsMondayMeeted)
-                {
-                    IsMondayMeeted = true;
-                    if (start.DayOfWeek == DayOfWeek.Saturday)
-                    {
-                        ++completeWeek;
-                        IsMondayMeeted = false;
-                    }
-                }
-                start = start.AddDays(1);
-            }
-            return completeWeek;
+            return DateTimeUtility.Weeks(start, end);
         }
     }
 }
