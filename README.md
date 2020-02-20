@@ -26,7 +26,7 @@ Update the products available for installation, then install the .NET Core SDK. 
 sudo yum install dotnet-sdk-3.1
 ```
 ### Deployment
-Running the .net application in an environment other than windows can be cumbersome. For deploying this application please read this short article from microsoft:
+Running the .net application in an environment other than windows can be cumbersome. For deploying this application on linux CentOS7 please read this short article from microsoft:
 
 ``` bash
 https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?view=aspnetcore-3.1
