@@ -36,7 +36,7 @@ https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?view=a
 
 ## Usage
 
-After running the application use the following URls to receivethe desirable output: 
+After running the application use the following URls to receive the desirable output: 
 ```.net
 /api/datetime/day/2020-02-18/2020-02-25
 /api/datetime/day/2020-02-18/2020-02-25/second
