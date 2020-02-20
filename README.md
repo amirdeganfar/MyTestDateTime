@@ -1,6 +1,6 @@
 # MyTestDateTime
 
-this is my test project. it has three endpoints for getting parameters and send you a decent output base on the route you are called. 
+This is my test project. it has some endpoints for getting parameters and send you a decent output base on the route you are called. 
 
 ## Installation
 
@@ -36,7 +36,7 @@ https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?view=a
 
 ## Usage
 
-after running the application use 
+After running the application use the following URls to recieve the desirable output: 
 ```.net
 /api/datetime/day/2020-02-18/2020-02-25
 /api/datetime/day/2020-02-18/2020-02-25/second
