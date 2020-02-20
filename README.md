@@ -1,6 +1,6 @@
 # MyTestDateTime
 
-this is my test project
+this is my test project. it has three endpoints for getting parameters and send you a decent output base on the route you are called. 
 
 ## Installation
 
@@ -25,10 +25,25 @@ Update the products available for installation, then install the .NET Core SDK. 
 ```bash
 sudo yum install dotnet-sdk-3.1
 ```
+### Deployment
+Running the .net application in an environment other than windows can be cumbersome. For deploying this application please read this short article from microsoft:
+
+``` bash
+https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?view=aspnetcore-3.1
+```
+
+
 
 ## Usage
 
-after running the application
-```python
+after running the application use 
+```.net
+/api/datetime/day/2020-02-18/2020-02-25
+/api/datetime/day/2020-02-18/2020-02-25/second
+/api/datetime/day/2020-02-18/2020-02-25/minute
+/api/datetime/day/2020-02-18/2020-02-25/hour
+/api/datetime/day/2020-02-18/2020-02-25/year
+/api/datetime/weekdays/2020-02-18/2020-02-25
+/api/datetime/weeks/2020-02-18/2020-02-25
 
 ```
